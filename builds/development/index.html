@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" ng-app="angulator">
+  <head>
+    <title>angulator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+  </head>
+  <body>
+    <section id="angulator"  ng-controller="calCtr as main">
+        <div id = "screen">
+          <nobar id="up"  >{{formular}}</nobar>
+          <span id="low"  >{{result}}</span>
+        </div>
+        <div id = "buttons">
+          <div id = "nums">
+            <button data-uicode="55" ng-click="formularAdd($event)">7</button>
+            <button data-uicode="56" ng-click="formularAdd($event)">8</button>
+            <button data-uicode="57" ng-click="formularAdd($event)">9</button>
+            <button data-uicode="52" ng-click="formularAdd($event)">4</button>
+            <button data-uicode="53" ng-click="formularAdd($event)">5</button>
+            <button data-uicode="54" ng-click="formularAdd($event)">6</button>
+            <button data-uicode="49" ng-click="formularAdd($event)">1</button>
+            <button data-uicode="50" ng-click="formularAdd($event)">2</button>
+            <button data-uicode="51" ng-click="formularAdd($event)">3</button>
+            <button data-uicode="48" ng-click="formularAdd($event)">0</button>
+            <button data-uicode="48" ng-click="formularAdd($event)">00</button>
+            <button data-uicode="46" ng-click="formularAdd($event)">.</button>
+          </div>
+          <div id = "operators">
+            <button ng-click="clear()">c</button>
+            <button data-uicode="8730" ng-click="formularAdd($event)">&radic;</button>
+            <button data-uicode="215" ng-click="formularAdd($event)">&times;</button>
+            <button data-uicode="247" ng-click="formularAdd($event)">&divide;</button>
+            <button data-uicode="43" ng-click="formularAdd($event)">+</button>
+            <button data-uicode="8722" ng-click="formularAdd($event)">&minus;</button>
+            <button ng-click="equal()" >=</button>
+          </div>
+        </div>
+    </section>
+
+    
+    <script src="dist/bundle.js"></script>
+
+  </body>
+</html>

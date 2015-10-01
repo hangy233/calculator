@@ -1,0 +1,161 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono&subset=latin,vietnamese);
+@import '_flex';
+@mixin border3dInset($size, $color) {
+  border: $size solid;
+  border-top-color: darken($color, 10%);
+  border-left-color: darken($color, 10%);
+  border-bottom-color: lighten($color, 10%);
+  border-right-color: lighten($color, 10%);  
+}
+
+@mixin border3d($size, $color) {
+  border: $size solid;
+  border-top-color: lighten($color, 10%);
+  border-left-color: lighten($color, 10%);
+  border-bottom-color: darken($color, 10%);
+  border-right-color: darken($color, 10%);  
+}
+
+html, body{
+    font-family: 'Roboto Mono', ;
+    padding:0;
+    margin:0;
+    @include flexDisplay;
+    @include flexAlignItems(center);
+    @include flexJustifyContents(center);
+    height:100vh;
+}
+
+
+button:focus {
+    outline:0;
+}
+button::-moz-focus-inner {
+  border: 0;
+}
+
+
+#angulator{
+    padding: 10px;
+    border-radius:12px;
+    @include flexWrap(wrap);
+    @include border3d(4px, #BACBD5);
+    @include flexDisplay;
+    width:500px;
+    height:600px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f6f8+0,d8e1e7+60,b5c6d0+61,e0eff9+100 */
+    background: #f2f6f8; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #f2f6f8 0%, #d8e1e7 60%, #b5c6d0 61%, #e0eff9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f2f6f8), color-stop(60%,#d8e1e7), color-stop(61%,#b5c6d0), color-stop(100%,#e0eff9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg, #f2f6f8 0%,#d8e1e7 60%,#b5c6d0 61%,#e0eff9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, #f2f6f8 0%,#d8e1e7 60%,#b5c6d0 61%,#e0eff9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, #f2f6f8 0%,#d8e1e7 60%,#b5c6d0 61%,#e0eff9 100%); /* IE10+ */
+    background: linear-gradient(135deg, #f2f6f8 0%,#d8e1e7 60%,#b5c6d0 61%,#e0eff9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    -webkit-box-shadow: -1px 11px 40px -1px rgba(0,0,0,0.61);
+    -moz-box-shadow: -1px 11px 40px -1px rgba(0,0,0,0.61);
+    box-shadow: -1px 11px 40px -1px rgba(0,0,0,0.61);
+    
+    #screen{
+        color: #354C61;
+        width: 500px;
+        height: 105px;
+        background-color:#C9D4DE;
+        overflow: hidden;
+        @include border3dInset(3px, #CBDAE8);
+        @include flexDisplay;
+        @include flexWrap(wrap);
+        
+        #up, #low{
+            margin: 0px 8px;
+            width:100%;
+            @include flexDisplay;
+            @include flexJustifyContents(flex-end);
+            @include flexAlignItems(center);
+            @include flexWrap(nowrap);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        #up{
+            height:60%;
+            font-size:60px;
+            @include transitionDuration(0.2s);
+            &.animate{
+                transform: translateY(-63px);
+                @include transitionDuration(0);
+            }
+            
+        }
+        #low{
+            height:40%;
+            font-size:40px;
+            @include transitionDuration(0.3s);
+            
+            &.animate{
+                height: 60%;
+                font-size: 60px;
+                transform: translateY(-63px);
+                @include transitionDuration(0);
+            }
+        }
+        
+ 
+    }
+    #buttons{
+        height: 471px;
+        width: 500px;
+        @include flexDisplay;
+        
+        button{
+            font-family: inherit;
+            color: white;
+            font-size: 68px;
+            @include border3d(3px, #9a9a9a);
+            @include transitionDuration(0.1s);
+        }
+        #nums{
+            width: 60%;
+            @include flexDisplay;
+            @include flexWrap(wrap);
+            
+            button{
+                margin:0;
+                width:33.3%;
+                background-color: rgba(181, 181, 181, 0.7);
+                
+                &:active{
+                    background-color: rgba(181, 181, 181, 0.9);
+                    font-size:66px;
+                }
+            }
+
+        }
+        #operators{
+            width: 40%;
+            @include flexDisplay;
+            @include flexWrap(wrap);
+            
+            button{
+                height:117px;
+                margin:0;
+                width:50%;
+                background-color: rgba(125, 125, 125, 0.7);
+                &:active{
+                    background-color: rgba(125, 125, 125,  0.9);
+                    font-size:66px;
+                }
+            }
+            button:nth-last-child(1){
+                width:100%;
+            }
+            button:nth-child(1){
+                background-color:rgba(220, 109, 109, 0.7);
+                &:active{
+                    background-color: rgba(220, 109, 109,  0.9);
+                    font-size:66px;
+                }
+            }
+        }
+    }
+}

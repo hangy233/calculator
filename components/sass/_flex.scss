@@ -1,0 +1,47 @@
+@mixin flexDisplay() {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+}
+
+@mixin flexDirection($dir) {
+    -webkit-flex-direction: $dir;
+    flex-direction: $dir;
+}
+
+@mixin flexAlignItems($align) {
+    -webkit-align-items: $align; /* Safari 6.1+ */
+    align-items: $align;
+}
+
+@mixin transitionDuration($duration){
+    -webkit-transition-duration: $duration; /* Safari */
+    transition-duration: $duration;
+}
+
+@mixin transformy($off){
+    transform:translateY($off);
+    -ms-transform:translateY($off); 	/* IE 9 */
+    -moz-transform:translateY($off); 	/* Firefox */
+    -webkit-transform:translateY($off); /* Safari 和 Chrome */
+    -o-transform:translateY($off); 	
+}
+
+@mixin flexShrink($shrink){
+    -webkit-flex-shrink: $shrink; 
+    flex-shrink: $shrink;
+}
+
+@mixin flexWrap($wrap){
+     -webkit-flex-wrap: $wrap; /* Safari 6.1+ */
+    flex-wrap: $wrap;
+}
+
+@mixin flexJustifyContents($jc){
+    -webkit-justify-content: $jc; /* Safari 6.1+ */
+    justify-content: $jc;
+}
+
+@mixin flexGrow($grow){
+    -webkit-flex-grow:$grow;
+    flex-grow:$grow;
+}
