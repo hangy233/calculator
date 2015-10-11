@@ -1,5 +1,5 @@
 ## calculator
-[![Dependency Status](https://david-dm.org/johanye/PixivDeviantSearch.svg)](https://david-dm.org/johanye/calculator)
+[![Dependency Status](https://david-dm.org/johanye/calculator.svg)](https://david-dm.org/johanye/calculator)
 
 a simple calaulator app using angularjs
 
